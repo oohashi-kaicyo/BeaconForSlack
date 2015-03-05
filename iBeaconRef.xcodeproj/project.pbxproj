@@ -10,7 +10,6 @@
 		FEF817781AA7004200EC7208 /* MOiOSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF817771AA7004200EC7208 /* MOiOSDevice.m */; };
 		FEF8177E1AA701C500EC7208 /* MOiPhonePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF8177D1AA701C500EC7208 /* MOiPhonePosition.m */; };
 		FEF817811AA70B9700EC7208 /* MOBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF817801AA70B9700EC7208 /* MOBeacon.m */; };
-		FEF817851AA7E80400EC7208 /* TSSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF817841AA7E80400EC7208 /* TSSingleton.m */; };
 		FEF947491AA4840E009A3FF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF947481AA4840E009A3FF7 /* main.m */; };
 		FEF9474C1AA4840E009A3FF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF9474B1AA4840E009A3FF7 /* AppDelegate.m */; };
 		FEF9474F1AA4840E009A3FF7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF9474E1AA4840E009A3FF7 /* ViewController.m */; };
@@ -40,8 +39,6 @@
 		FEF8177D1AA701C500EC7208 /* MOiPhonePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOiPhonePosition.m; sourceTree = "<group>"; };
 		FEF8177F1AA70B9700EC7208 /* MOBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBeacon.h; sourceTree = "<group>"; };
 		FEF817801AA70B9700EC7208 /* MOBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBeacon.m; sourceTree = "<group>"; };
-		FEF817831AA7E80400EC7208 /* TSSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSSingleton.h; sourceTree = "<group>"; };
-		FEF817841AA7E80400EC7208 /* TSSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSSingleton.m; sourceTree = "<group>"; };
 		FEF947431AA4840E009A3FF7 /* iBeaconRef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBeaconRef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF947471AA4840E009A3FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEF947481AA4840E009A3FF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,15 +78,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FEF817821AA7E7DE00EC7208 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				FEF817831AA7E80400EC7208 /* TSSingleton.h */,
-				FEF817841AA7E80400EC7208 /* TSSingleton.m */,
-			);
-			name = Test;
-			sourceTree = "<group>";
-		};
 		FEF9473A1AA4840E009A3FF7 = {
 			isa = PBXGroup;
 			children = (
@@ -112,7 +100,6 @@
 		FEF947451AA4840E009A3FF7 /* iBeaconRef */ = {
 			isa = PBXGroup;
 			children = (
-				FEF817821AA7E7DE00EC7208 /* Test */,
 				FEF947701AA48483009A3FF7 /* Model */,
 				FEF9476E1AA4846F009A3FF7 /* View */,
 				FEF9476F1AA48478009A3FF7 /* Controller */,
@@ -304,7 +291,6 @@
 				FEF8177E1AA701C500EC7208 /* MOiPhonePosition.m in Sources */,
 				FEF947491AA4840E009A3FF7 /* main.m in Sources */,
 				FEF947741AA5B45E009A3FF7 /* OBLocationManager.m in Sources */,
-				FEF817851AA7E80400EC7208 /* TSSingleton.m in Sources */,
 				FEF9477B1AA5BCCB009A3FF7 /* MOLocationManager.m in Sources */,
 				FEF817811AA70B9700EC7208 /* MOBeacon.m in Sources */,
 			);
