@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE7903E31AB56A2B00215097 /* GETHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7903E21AB56A2B00215097 /* GETHTTP.m */; };
+		FE92C38D1AB54CDF00B8AB55 /* OBAlertDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE92C38C1AB54CDF00B8AB55 /* OBAlertDelegate.m */; };
+		FE92C3901AB54F1300B8AB55 /* OBAlertResisterDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE92C38F1AB54F1300B8AB55 /* OBAlertResisterDelegate.m */; };
+		FE92C3931AB555B900B8AB55 /* WorkSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = FE92C3921AB555B900B8AB55 /* WorkSpace.m */; };
 		FEF6744C1AA98B0C00F048FA /* OBPerpetuation.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF6744B1AA98B0C00F048FA /* OBPerpetuation.m */; };
 		FEF6744F1AA997EF00F048FA /* OBRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF6744E1AA997EF00F048FA /* OBRegister.m */; };
 		FEF674521AA9983B00F048FA /* OBPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF674511AA9983B00F048FA /* OBPoster.m */; };
@@ -36,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE7903E01AB55BA500215097 /* OBAlertResisterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBAlertResisterDelegate.h; sourceTree = "<group>"; };
+		FE7903E11AB56A2B00215097 /* GETHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GETHTTP.h; sourceTree = "<group>"; };
+		FE7903E21AB56A2B00215097 /* GETHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GETHTTP.m; sourceTree = "<group>"; };
+		FE92C38B1AB54CDF00B8AB55 /* OBAlertDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBAlertDelegate.h; sourceTree = "<group>"; };
+		FE92C38C1AB54CDF00B8AB55 /* OBAlertDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBAlertDelegate.m; sourceTree = "<group>"; };
+		FE92C38F1AB54F1300B8AB55 /* OBAlertResisterDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBAlertResisterDelegate.m; sourceTree = "<group>"; };
+		FE92C3911AB555B900B8AB55 /* WorkSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkSpace.h; sourceTree = "<group>"; };
+		FE92C3921AB555B900B8AB55 /* WorkSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkSpace.m; sourceTree = "<group>"; };
 		FEF6744A1AA98B0C00F048FA /* OBPerpetuation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBPerpetuation.h; sourceTree = "<group>"; };
 		FEF6744B1AA98B0C00F048FA /* OBPerpetuation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBPerpetuation.m; sourceTree = "<group>"; };
 		FEF6744D1AA997EF00F048FA /* OBRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBRegister.h; sourceTree = "<group>"; };
@@ -161,6 +173,8 @@
 				FEF9474B1AA4840E009A3FF7 /* AppDelegate.m */,
 				FEF9474D1AA4840E009A3FF7 /* ViewController.h */,
 				FEF9474E1AA4840E009A3FF7 /* ViewController.m */,
+				FE92C3911AB555B900B8AB55 /* WorkSpace.h */,
+				FE92C3921AB555B900B8AB55 /* WorkSpace.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -191,6 +205,12 @@
 				FEF6744E1AA997EF00F048FA /* OBRegister.m */,
 				FEF674501AA9983B00F048FA /* OBPoster.h */,
 				FEF674511AA9983B00F048FA /* OBPoster.m */,
+				FE7903E11AB56A2B00215097 /* GETHTTP.h */,
+				FE7903E21AB56A2B00215097 /* GETHTTP.m */,
+				FE92C38B1AB54CDF00B8AB55 /* OBAlertDelegate.h */,
+				FE92C38C1AB54CDF00B8AB55 /* OBAlertDelegate.m */,
+				FE7903E01AB55BA500215097 /* OBAlertResisterDelegate.h */,
+				FE92C38F1AB54F1300B8AB55 /* OBAlertResisterDelegate.m */,
 			);
 			name = Observer;
 			sourceTree = "<group>";
@@ -300,10 +320,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE7903E31AB56A2B00215097 /* GETHTTP.m in Sources */,
 				FEF9474F1AA4840E009A3FF7 /* ViewController.m in Sources */,
 				FEF817781AA7004200EC7208 /* MOiOSDevice.m in Sources */,
 				FEF6744C1AA98B0C00F048FA /* OBPerpetuation.m in Sources */,
+				FE92C3901AB54F1300B8AB55 /* OBAlertResisterDelegate.m in Sources */,
 				FEF6744F1AA997EF00F048FA /* OBRegister.m in Sources */,
+				FE92C3931AB555B900B8AB55 /* WorkSpace.m in Sources */,
+				FE92C38D1AB54CDF00B8AB55 /* OBAlertDelegate.m in Sources */,
 				FEF9474C1AA4840E009A3FF7 /* AppDelegate.m in Sources */,
 				FEF8177E1AA701C500EC7208 /* MOiPhonePosition.m in Sources */,
 				FEF947491AA4840E009A3FF7 /* main.m in Sources */,

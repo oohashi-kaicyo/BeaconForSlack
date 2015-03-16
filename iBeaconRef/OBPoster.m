@@ -10,10 +10,18 @@
 
 @implementation OBPoster
 
+- (id)init
+{
+    if (self = [super init]) {
+    }
+    
+    return self;
+}
+
 - (id)postWithData:(id)data url:(NSURL *)url
 {
     self.query = [data dataUsingEncoding: NSUTF8StringEncoding];
-    self.request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/test/"]//url
+    self.request = [NSMutableURLRequest requestWithURL:url
                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                        timeoutInterval:60.0];
     [self.request setHTTPMethod:@"POST"];
@@ -21,26 +29,24 @@
     [self.request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[self.query length]] forHTTPHeaderField:@"Content-Length"];
     [self.request setHTTPBody:self.query];
     
-    /* HTTP リクエスト送信 */
     NSHTTPURLResponse   *httpResponse;
-    self.contents = [NSURLConnection sendSynchronousRequest:self.request
-                                             returningResponse:&httpResponse error:nil];
-    NSString *contentsString = [[NSString alloc] initWithData:self.contents encoding:NSUTF8StringEncoding];
-    NSLog(@"contents:\n%@", contentsString);
-    
-    /* HTTP レスポンスヘッダ取得 */
-    NSDictionary *headers = httpResponse.allHeaderFields;
-    for (id key in headers) {
-        NSLog(@"%@: %@", key, [headers objectForKey:key]);
+    NSError *error = nil;
+    self.contents = [NSURLConnection sendSynchronousRequest:self.request returningResponse:&httpResponse error:&error];
+    self.contentsString = [[NSString alloc] initWithData:self.contents encoding:NSUTF8StringEncoding];
+    if(error){
+        
+        return error;
     }
+    //NSLog(@"ERROR: %@",[error domain]);
     
-    return self.headers;
+    return self.contentsString;//errorの場合......
 }
 
-- (id)postWithData:(NSString *)key content:(NSString *)content url:(NSString *)urlByString
+- (id)postWithKey:(NSString *)key content:(NSString *)content url:(NSString *)urlByString
 {
-    
-    return [self postWithData:[NSString stringWithFormat:@"%@=%@", key,content] url:[NSURL URLWithString:urlByString]];
+    NSLog(@"postWithKey");
+    //return [self postWithData:[NSString stringWithFormat:@"%@=%@", key,content] url:[NSURL URLWithString:urlByString]];
+    return [self postWithData:[NSString stringWithFormat:@"user_name=%@&state=%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"ownerOfDevice"] ,content] url:[NSURL URLWithString:urlByString]];
 }
 
 @end

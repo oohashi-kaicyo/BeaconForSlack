@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "OBRegister.h"
+#import "OBPoster.h"
+#import "GETHTTP.h"
 
 @interface OBPerpetuation : NSObject
+
+@property (nonatomic) OBPoster *positionStatePoster;
 
 - (id)init;
 

@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OBAlertResisterDelegate.h"
+#import "WorkSpace.h"
 
 @interface ViewController : UIViewController
+
+@property (nonatomic) OBAlertResisterDelegate *alertResisterDelegate;
+@property (weak, nonatomic) IBOutlet UITextField *textUserName;
+@property (nonatomic) UIAlertView *alertUserNameResister;
+
+- (id)init;
 
 @end

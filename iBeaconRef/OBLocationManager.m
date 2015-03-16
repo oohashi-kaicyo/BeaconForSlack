@@ -50,7 +50,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-    if (status == kCLAuthorizationStatusNotDetermined) {//明示的にstop?
+    if (status == kCLAuthorizationStatusNotDetermined) {
         NSLog(@"startMonitoringForRegion1");
     } else if(status == kCLAuthorizationStatusAuthorizedAlways) {
         [[MOLocationManager SharedManerger]  startMonitoringForRegion:  self.beaconRegion];
@@ -69,13 +69,15 @@
 
 -(void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
-    NSLog(@"didDetermineState");
+    NSLog(@"didDetermineState%d", state);
     switch (state) {
         case CLRegionStateInside:
         {
-            [MOiPhonePosition SharedManerger].latestRegion.state = @"ENTER";
-            if([region isMemberOfClass:[CLBeaconRegion class]] && [MOLocationManager isRangingAvailable]){
-                [[MOLocationManager SharedManerger]  startRangingBeaconsInRegion:(CLBeaconRegion *)region];
+            if ([[MOiPhonePosition SharedManerger].latestRegion.state isEqual:@"EXIT"] || [[MOiPhonePosition SharedManerger].latestRegion.state isEqual:@""] || ![MOiPhonePosition SharedManerger].latestRegion.state) {
+                [MOiPhonePosition SharedManerger].latestRegion.state = @"ENTER";
+                if([region isMemberOfClass:[CLBeaconRegion class]] && [MOLocationManager isRangingAvailable]){
+                    [[MOLocationManager SharedManerger]  startRangingBeaconsInRegion:(CLBeaconRegion *)region];
+                }
             }
         }
         break;

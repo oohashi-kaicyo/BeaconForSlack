@@ -21,7 +21,6 @@
         //データの永続化
         self.Perpetuation = [OBPerpetuation new];
         //user name
-        [MOiPhonePosition SharedManerger].iOSDevice.ownerOfDevice = @"test_user";//////////////////////////
         //以下，Beacon監視処理
         self.beaconRegion
         = [

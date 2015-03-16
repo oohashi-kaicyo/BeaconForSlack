@@ -14,15 +14,44 @@
 
 @implementation ViewController
 
+- (id)init
+{
+    if (self = [super init]) {
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
-    
+        self.alertResisterDelegate = [OBAlertResisterDelegate new];
+        self.alertUserNameResister = [[UIAlertView alloc]
+                                      initWithTitle:@"確認"
+                                      message:([NSString stringWithFormat:@"ユーザー名を%@として登録しますか?", self.textUserName.text])
+                                      delegate:self.alertResisterDelegate
+                                      cancelButtonTitle:@"Cancel"
+                                      otherButtonTitles:@"OK", nil
+                                      ];
     [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+
+- (IBAction)resisterUserName:(UIButton *)sender
+{
+    [WorkSpace SharedManerger].textUserName = self.textUserName.text;
+    self.alertUserNameResister.message =([NSString stringWithFormat:@"ユーザー名を「%@」として登録しますか?", self.textUserName.text]);
+    [self.alertUserNameResister show];
+    //変数に代入
+    //[MOiPhonePosition SharedManerger].iOSDevice.ownerOfDevice = self.textUserName.text;
+    //代入をOB
+    //OBで検知
+    
+    //UserDefaultで永続化(NSLogで確認)
+    //登録が完了しました．
 }
 
 @end

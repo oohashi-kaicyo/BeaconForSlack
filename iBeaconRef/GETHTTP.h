@@ -1,16 +1,16 @@
 //
-//  OBPoster.h
+//  GETHTTP.h
 //  iBeaconRef
 //
-//  Created by oohashi on 2015/03/06.
+//  Created by oohashi on 2015/03/15.
 //  Copyright (c) 2015年 Yasuhiro.Hashimoto. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "MOiPhonePosition.h"
 
-@interface OBPoster : NSObject
+@interface GETHTTP : NSObject
 
+@property (nonatomic)NSURL               *url;
 @property (nonatomic)NSData              *query;
 @property (nonatomic)NSMutableURLRequest *request;
 @property (nonatomic)NSData              *contents;
@@ -18,7 +18,7 @@
 @property (nonatomic)NSDictionary        *headers;
 
 - (id)init;
-- (id)postWithData: (id)data url: (NSURL *)url;
-- (id)postWithKey: (NSString *)key content: (NSString *)content url: (NSString *)urlByString;
+- (id)initWithUrl: (NSURL *)url;
+- (void)action;
 
 @end
