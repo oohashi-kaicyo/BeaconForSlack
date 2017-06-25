@@ -12,7 +12,6 @@
 
 -(void)alertView: (UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Tapped: %ld", (long)buttonIndex);
 }
 
 @end

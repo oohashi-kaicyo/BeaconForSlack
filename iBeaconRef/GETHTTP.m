@@ -12,7 +12,7 @@
 
 - (id)init
 {
-    return [self initWithUrl:[NSURL URLWithString:@"http://kaicyo.local/Beacon/API/insert.php?user_name=kaicyo&state=INSIDE"]];
+    return [self initWithUrl:[NSURL URLWithString:@"****"]];
 }
 
 - (id)initWithUrl: (NSURL *)url

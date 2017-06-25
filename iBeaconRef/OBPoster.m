@@ -14,7 +14,6 @@
 {
     if (self = [super init]) {
     }
-    
     return self;
 }
 
@@ -29,23 +28,18 @@
     [self.request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[self.query length]] forHTTPHeaderField:@"Content-Length"];
     [self.request setHTTPBody:self.query];
     
-    NSHTTPURLResponse   *httpResponse;
+    NSHTTPURLResponse *httpResponse;
     NSError *error = nil;
     self.contents = [NSURLConnection sendSynchronousRequest:self.request returningResponse:&httpResponse error:&error];
     self.contentsString = [[NSString alloc] initWithData:self.contents encoding:NSUTF8StringEncoding];
-    if(error){
-        
+    if(error) {
         return error;
     }
-    //NSLog(@"ERROR: %@",[error domain]);
-    
-    return self.contentsString;//errorの場合......
+    return self.contentsString;
 }
 
 - (id)postWithKey:(NSString *)key content:(NSString *)content url:(NSString *)urlByString
 {
-    NSLog(@"postWithKey");
-    //return [self postWithData:[NSString stringWithFormat:@"%@=%@", key,content] url:[NSURL URLWithString:urlByString]];
     return [self postWithData:[NSString stringWithFormat:@"user_name=%@&state=%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"ownerOfDevice"] ,content] url:[NSURL URLWithString:urlByString]];
 }
 

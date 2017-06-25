@@ -20,11 +20,9 @@
 {
     static WorkSpace *Singleton;
     static dispatch_once_t once;
-    
     dispatch_once( &once, ^{
         Singleton = [[WorkSpace alloc] init];
     });
-    
     return Singleton;
 }
 

@@ -12,9 +12,6 @@
 #import "GETHTTP.h"
 
 @interface OBPerpetuation : NSObject
-
 @property (nonatomic) OBPoster *positionStatePoster;
-
 - (id)init;
-
 @end

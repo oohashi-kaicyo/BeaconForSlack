@@ -17,28 +17,20 @@
 
 - (id)init
 {
-    if(self = [super init]){
-        //データの永続化
+    if(self = [super init]) {
         self.Perpetuation = [OBPerpetuation new];
-        //user name
-        //以下，Beacon監視処理
-        self.beaconRegion
-        = [
+        self.beaconRegion = [
            [CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc]
                                      initWithUUIDString:@"00000000-48A4-1001-B000-001C4D175E4E" ]
                                              identifier:@"yasuhiro.hashimoto"
-          ];
+        ];
         self.LocationManagerDelegater = [[OBLocationManager alloc] initWithBeaconRegion:self.beaconRegion];
         [MOLocationManager SharedManerger].delegate = self.LocationManagerDelegater;
-    
         if ([MOLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
             [self initForMonitoring];
-        } else {
-            NSLog(@"iBeaconを利用できません．");
         }
     }
-    
-        return self;
+    return self;
 }
 
 - (void)initForMonitoring
@@ -52,33 +44,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
     return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-
 }
 
 @end

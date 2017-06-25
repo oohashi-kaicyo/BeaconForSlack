@@ -14,8 +14,6 @@
 {
     [[NSUserDefaults standardUserDefaults] setObject:object forKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
     return true;
 }
-
 @end

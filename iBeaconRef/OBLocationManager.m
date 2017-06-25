@@ -12,21 +12,19 @@
 
 - (id)init
 {
-    if(self = [super init]){
+    if(self = [super init]) {
     }
-    
     return [self initWithBeaconRegion:[
                                        [CLBeaconRegion alloc]
                                        initWithProximityUUID:[[NSUUID alloc]
-                                       initWithUUIDString:@"00000000-48A4-1001-B000-001C4D175E4E" ]
-                                       identifier:@"yasuhiro.hashimoto"
+                                       initWithUUIDString:@"****-****-****-****-***********" ]
+                                       identifier:@"********"
                                        ]];
 }
 
 - (id)initWithBeaconRegion:(CLBeaconRegion *)beaconRegion
 {
     self.beaconRegion = beaconRegion;
-    
     return self;
 }
 
@@ -36,16 +34,14 @@
         [[MOLocationManager SharedManerger]  startRangingBeaconsInRegion:(CLBeaconRegion *)region];
         [MOiPhonePosition SharedManerger].latestRegion.state = @"ENTER";
     }
-    NSLog(@"didEnterRegion");
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region
 {
     if ([region isMemberOfClass:[CLBeaconRegion class]] && [CLLocationManager isRangingAvailable]) {
-        [[MOLocationManager SharedManerger]  stopRangingBeaconsInRegion:(CLBeaconRegion *)region];//?
+        [[MOLocationManager SharedManerger]  stopRangingBeaconsInRegion:(CLBeaconRegion *)region];
         [MOiPhonePosition SharedManerger].latestRegion.state = @"EXIT";
     }
-    NSLog(@"didExitRegion");
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -69,32 +65,24 @@
 
 -(void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
-    NSLog(@"didDetermineState%d", state);
     switch (state) {
         case CLRegionStateInside:
         {
-            if ([[MOiPhonePosition SharedManerger].latestRegion.state isEqual:@"EXIT"] || [[MOiPhonePosition SharedManerger].latestRegion.state isEqual:@""] || ![MOiPhonePosition SharedManerger].latestRegion.state) {
+            if ([[MOiPhonePosition SharedManerger].latestRegion.state isEqual:@"EXIT"] ||
+                [[MOiPhonePosition SharedManerger].latestRegion.state isEqual:@""]     ||
+               ![MOiPhonePosition SharedManerger].latestRegion.state) {
                 [MOiPhonePosition SharedManerger].latestRegion.state = @"ENTER";
-                if([region isMemberOfClass:[CLBeaconRegion class]] && [MOLocationManager isRangingAvailable]){
+                if([region isMemberOfClass:[CLBeaconRegion class]] && [MOLocationManager isRangingAvailable]) {
                     [[MOLocationManager SharedManerger]  startRangingBeaconsInRegion:(CLBeaconRegion *)region];
                 }
             }
         }
         break;
         case CLRegionStateOutside:
-        {
-            //必要なし
-        }
         break;
         case CLRegionStateUnknown:
-        {
-            
-        }
         break;
         default:
-        {
-            
-        }
         break;
     }
 }
@@ -107,9 +95,7 @@
             [MOiPhonePosition SharedManerger].latestRegion.major = firstBeacon.major;
             [MOiPhonePosition SharedManerger].latestRegion.minor = firstBeacon.minor;
             [[MOLocationManager SharedManerger] stopRangingBeaconsInRegion:self.beaconRegion];
-            NSLog(@"%@", [MOiPhonePosition SharedManerger].latestRegion.state);
         }
     }
 }
-
 @end

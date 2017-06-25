@@ -45,13 +45,6 @@
     [WorkSpace SharedManerger].textUserName = self.textUserName.text;
     self.alertUserNameResister.message =([NSString stringWithFormat:@"ユーザー名を「%@」として登録しますか?", self.textUserName.text]);
     [self.alertUserNameResister show];
-    //変数に代入
-    //[MOiPhonePosition SharedManerger].iOSDevice.ownerOfDevice = self.textUserName.text;
-    //代入をOB
-    //OBで検知
-    
-    //UserDefaultで永続化(NSLogで確認)
-    //登録が完了しました．
 }
 
 @end
